@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="../animate.css">
+    <!-- 引入四个文件，必须注意导入顺序-->
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .top {
+
+            height: 600px;
+            margin: 0 auto;
+            background-image: linear-gradient(to bottom, #02f0bb 0%, #00ffff 100%);
+
+        }
+
+        .top1 {
+            /*/!*display: flex;*!/*/
+            /*justify-content: space-between;*/
+            /*align-items: flex-start;*/
+
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-flow: row nowrap;
+
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .top1 > img {
+            width: 200px;
+            /*height: 150px;*/
+
+        }
+
+        .top1-select {
+            margin-left: 20px;
+        }
+
+        .col-12 > ul > li {
+            float: left;
+            list-style: none;
+            display: inline-block;
+            width: 100px;
+            height: 20px;
+            margin: 5px;
+            border-radius: 5px;
+
+            text-align: center;
+            line-height: 20px;
+            background: #00ffff;
+            font-size: 16px;
+            font-family: 华文彩云;
+
+        }
+
+        .col-12 > ul > li > a {
+            text-decoration: none;
+            color: #0033ff;
+            font-weight: bold;
+            font-weight: bold;
+        }
+
+        .top1-login {
+            /*position: absolute;*/
+            /*top: 5px;*/
+            /*right: 2px;*/
+            margin-right: 10px;
+
+        }
+
+        .top1-login > ul > li {
+            display: inline-block;
+            width: 70px;
+            height: 50px;
+            margin: 1px;
+            border-radius: 5px;
+            background: linear-gradient(to bottom, #27b1f6 0%, #0aa1ed 100%);
+
+            text-align: center;
+            line-height: 50px;
+
+        }
+
+        .top1-login > ul > li > a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .ear {
+            font-size: 45px;
+            color: #66afe9;
+            padding-left: 10px;
+        }
+
+        .ear:hover {
+            animation: flash 2s ease-out 0s 1;
+        }
+
+        .write {
+            font-size: 30px;
+            padding-left: 115px;
+        }
+
+        .use {
+            display: block;
+            /*position: absolute;*/
+            /*top: 300px;*/
+            /*left: 186px;*/
+            width: 200px;
+            height: 100px;
+            border-radius: 10px;
+            background: #337ab7;
+            border-color: #2e6da4;
+            font-size: 30px;
+            text-align: center;
+            line-height: 100px;
+            color: #fff;
+            text-decoration: none;
+            margin-left: 118px;
+            padding-left: 0px;
+
+        }
+
+        .top2 .mac {
+            /*position: absolute;*/
+            /*top: 145px;*/
+            /*left: 727px;*/
+            width: 800px;
+            height: 400px;
+            margin-left: -90px;
+            transition: all 2s ease;
+        }
+
+        .top2 .mac:hover {
+            /*		 transform:scale(1.2) translateY(10px);*/
+            animation: jello 2s ease-out 0s infinite;
+        }
+
+        .top3 {
+            display: flex;
+            justify-content: flex-start;
+
+        }
+
+        .apple {
+            text-decoration: none;
+            display: inline-block;
+            width: 150px;
+            height: 50px;
+            /*position: absolute;*/
+            /*top: 500px;*/
+            /*left: 50px;*/
+            border: 2px solid #fff;
+            background: transparent;
+            border-radius: 20px;
+            font-family: 华文琥珀;
+            font-size: 22px;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+            margin-right: 20px;;
+            margin-left: 20px;;
+        }
+
+        .android {
+            text-decoration: none;
+            display: inline-block;
+            width: 150px;
+            height: 50px;
+            /*position: absolute;*/
+            /*top: 500px;*/
+            /*left: 220px;*/
+            border: 2px solid #fff;
+            background: transparent;
+            border-radius: 20px;
+            font-family: 华文琥珀;
+            font-size: 22px;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+
+        }
+
+        .middle {
+
+            height: 600px;
+            background: #eee;
+
+        }
+
+        .middle2 {
+            background-color: #00FCF4;
+        }
+
+        .middle1 {
+
+            position: relative;
+        }
+
+        .bottom {
+
+        }
+
+        .bottom1 {
+            height: 300px;
+            background: #eee;
+            margin-top: 20px;
+            padding: 0px;
+            text-align: center;
+            vertical-align: center;
+        }
+
+        p.one {
+            font-size: 63px;
+
+        }
+
+        p.one:hover {
+            animation: heartBeat 2s;
+        }
+
+        p.two {
+            font-size: 21px;
+            font-weight: 200;
+
+        }
+
+        p.two:hover {
+            animation: flip 0.5s;
+        }
+
+        p.three {
+            font-size: 21px;
+            font-weight: 200;
+
+        }
+
+        /*三张倾倒的图片-采用弹性布局*/
+        .bottom2 {
+
+            height: 300px;
+            background: #eee;
+            margin-top: 20px;
+
+            /*display: flex;*/
+            /*flex-flow: row nowrap;*/
+            /*justify-content: space-around;*/
+            /*align-items: center;*/
+
+        }
+
+        /*第一模块采用相对定位*/
+        .bottom2-wps1 {
+            position: relative;
+            top: 0px;
+            left: 85px;
+            width: 30%;
+            height: 200px;
+            margin-top: 50px;
+
+        }
+
+        /*	第一张图片的原始状态	*/
+        .bottom2-wps1 .p1 {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 10;
+            width: 200px;
+            height: 200px;
+            transition: all 1s;
+            transform-origin: center bottom;
+        }
+
+        /*第一张图片下的文字的初始状态*/
+        .bottom2-wps1 .w1 {
+            width: 200px;
+            height: 200px;
+            font-size: 30px;
+            color: #E82D23;
+            font-weight: bold;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            opacity: 0;
+            z-index: 5;
+            transition: all 2s;
+        }
+
+        /*第一模块图片hover后的状态*/
+        .bottom2-wps1:hover .p1 {
+            transform: rotateX(75deg);
+
+        }
+
+        /*第一模块文字hover后的状态*/
+        .bottom2-wps1:hover .w1 {
+            opacity: 1;
+        }
+
+        /*第二模块采用相对定位*/
+        .bottom2-wps2 {
+            position: relative;
+            top: 0px;
+            left: 90px;
+            width: 30%;
+            height: 200px;
+            margin-top: 50px;
+        }
+
+        /*第二模块下的图片的初始状态*/
+        .bottom2-wps2 .p2 {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 10;
+            transform-origin: center bottom;
+            transition: all 1s;
+
+        }
+
+        /*第二模块下的文字的初始状态*/
+        .bottom2-wps2 .w2 {
+            width: 200px;
+            height: 200px;
+            font-size: 30px;
+            color: #4186F4;
+            font-weight: bold;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 5;
+            opacity: 5;
+            transition: opacity 2s;
+        }
+
+        /*第二模块下图片的hover状态*/
+        .bottom2-wps2:hover .p2 {
+            transform: rotateX(75deg);
+        }
+
+        /*第二模块下文字的hover状态*/
+        .bottom2-wps2:hover .w2 {
+            opacity: 1;
+        }
+
+        /*第三模块采用相对定位*/
+        .bottom2-wps3 {
+            position: relative;
+            top: 0px;
+            left: 100px;
+            width: 30%;
+            height: 200px;
+            margin-top: 50px;
+        }
+
+        /*第三模块下的图片的初始状态*/
+        .bottom2-wps3 .p3 {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 10;
+            transform-origin: center bottom;
+            transition: all 1s;
+
+        }
+
+        /*第三模块下的文字的初始状态*/
+        .bottom2-wps3 .w3 {
+            width: 200px;
+            height: 200px;
+            font-size: 30px;
+            color: #00AB4E;
+            font-weight: bold;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 5;
+            opacity: 5;
+            transition: opacity 2s;
+        }
+
+        /*第三模块下图片的hover状态*/
+        .bottom2-wps3:hover .p3 {
+            transform: rotateX(75deg);
+        }
+
+        /*第三模块下文字的hover状态*/
+        .bottom2-wps3:hover .w3 {
+            opacity: 1;
+        }
+
+        /*轮播图左右小耳朵样式重写*/
+
+        .carousel-control-prev, .carousel-control-next {
+            width: 4%;
+            height: 20%;
+            top: 40%;
+            background-color: #aaa;
+            border-radius: 0.25rem;
+        }
+
+        /*重写轮播图里轮播指示器样式*/
+        .carousel-indicators li {
+            width: 0.8rem;
+            height: 0.8rem;
+            background-color: #676868;
+            border-radius: 50%;
+            margin: 0 6px;
+
+        }
+
+        /*重写轮播图里轮播指示器默认选中active的的样式*/
+        .carousel-indicators li.active {
+            background-color: #4db0e8;
+        }
+
+        /*轮播图左右小耳朵样式重写*/
+
+        .carousel-control-prev, .carousel-control-next {
+            width: 4%;
+            height: 20%;
+            top: 40%;
+            background-color: #aaa;
+            border-radius: 0.25rem;
+        }
+
+        /*重写轮播图里轮播指示器样式*/
+        .carousel-indicators li {
+            width: 0.8rem;
+            height: 0.8rem;
+            background-color: #676868;
+            border-radius: 50%;
+            margin: 0 6px;
+
+        }
+
+        /*重写轮播图里轮播指示器默认选中active的的样式*/
+        .carousel-indicators li.active {
+            background-color: #4db0e8;
+        }
+
+        /*10张轮播图的布局*/
+        .bottom3 > .row > .col > {
+            width: 240px;
+            text-align: center;
+        }
+
+        .bottom3 > .row > .col > a > img {
+            width: 180px;
+            margin-top: 30px;
+            margin-bottom: 22px;
+            margin-left: 15px;
+            margin-right: 15px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /*重写“更多合作伙伴”按钮的样式*/
+        .bottom3 .btn {
+            color: #2196F3;
+            background-color: #fff;
+        }
+
+        .bottom3 .btn:hover {
+            background-color: #2196F3;
+            color: #fff;
+
+        }
+
+        /*最下面的小字*/
+        .bottom4 {
+            margin-top: 50px;
+        }
+
+        .bottom4 ul li a {
+            color: #8d8a8a;
+        }
+
+        .bottom4 .left1 li:first-child {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .bottom4 .left2 li:first-child {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .bottom4 .right1 li:first-child {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .bottom4 .right2 li:first-child {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+      .father{
+          height:98px;
+      }
+        .father>div{
+            position:fixed;
+            top:0px;
+            width:1110px;
+             z-index:20;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="father">
+        <div class="title navbar navbar-expand-md bg-dark navbar-dark ">
+
+            <a href="#" class="navbar-brand"><img src="../img/name.png" alt=""/></a>
+            <a href="#" class="navbar-brand btn btn-primary">加入我们</a>
+            <button class="navbar-toggler " data-toggle="collapse" data-target="#content"><a href="#"
+                                                                                             class="navbar-toggler-icon"></a>
+            </button>
+            <div class="collapse navbar-collapse d-flex justify-content-end" id="content">
+
+                <ul class="navbar-nav ">
+                    <li class="nav-item float-right"><a href="#" class="nav-link">企业版购买指南</a></li>
+                    <li class="nav-item float-right"><a href="#" class="nav-link">企业版</a></li>
+                    <li class="nav-item float-right"><a href="#" class="nav-link">客户端下载</a></li>
+                    <li class="nav-item float-right"><a href="#" class="nav-link">关于我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="top">
+        <div class="top1">
+
+            <img src="../img/name.png" alt="">
+
+
+            <div class="top1-login">
+                <ul>
+                    <li><a href="">登录</a></li>
+                    <li><a href="reg.html">注册</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="top2 row">
+            <div class="col-6">
+                <p class="ear">耳目一新的云端office</p>
+
+                <p class="write">打开网页就能写</p>
+                <a href="use.html" class="use">立即开始使用</a>
+            </div>
+            <div class="col-6">
+                <img class="mac" src="../img/macbook.png" alt="">
+            </div>
+        </div>
+        <div class="top3">
+            <a href="" class="apple">APPLE STORE</a>
+            <a href="" class="android">ANDROID</a>
+        </div>
+    </div>
+    <div class="middle">
+        <div class="middle1 row">
+            <div class="col-12">
+                <ul>
+                    <li><a href="">首页</a></li>
+                    <li><a href="#xin" data-toggle="collapse">新建</a>
+
+                        <div class="collapse" id="xin">WORD <br/>PPT <br/> EXEL</div>
+                    </li>
+                    <li><a href="#wen" data-toggle="collapse">文档</a>
+
+                        <div class="collapse" id="wen">继续编写 <br/>新建</div>
+                    </li>
+                    <li><a href="#biao" data-toggle="collapse">表格</a>
+
+                        <div class="collapse" id="biao">继续编写 <br/>新建</div>
+                    </li>
+                    <li><a href="#yan" data-toggle="collapse">演示</a>
+
+                        <div class="collapse" id="yan">继续编写 <br/>新建</div>
+                    </li>
+                    <li><a href="#meet" data-toggle="collapse">协作空间</a>
+
+                        <div class="collapse" id="meet">开会</div>
+                    </li>
+                    <li><a href="#help" data-toggle="collapse">协作助手</a>
+
+                        <div class="collapse" id="help">私人小助手</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="middle2">
+            <div class="row">
+                <div class="col-12">
+                    <!-- 轮播图-->
+                    <div id="demo" class="carousel" data-ride="carousel">
+                        <!-- 1.图片部分-->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="w-100" src="../img/privatecloud@1.png" alt=""/>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="w-100" src="../img/saas@1.png" alt=""/>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="w-100" src="../img/api@1.png" alt=""/>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="w-100" src="../img/privatecloud@1.png" alt=""/>
+                            </div>
+                        </div>
+                        <!-- 2.左右箭头-->
+                        <a href="#demo" class="carousel-control-prev" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a href="#demo" class="carousel-control-next" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+                        <!-- 3.轮播指示器-->
+                        <ul class="carousel-indicators">
+                            <li class="active" data-slide-to="0" data-target="#demo"></li>
+                            <li data-slide-to="1" data-target="#demo"></li>
+                            <li data-slide-to="2" data-target="#demo"></li>
+                            <li data-slide-to="3" data-target="#demo"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="bottom">
+        <div class="bottom1">
+            <div class="row">
+                <div class="col-12">
+                    <table></table>
+                    <p class="one">高效处理你的office文档</p>
+
+                    <p class="two">告别邮件、IM发送Office文档</p>
+
+                    <p class="three">一只写提供多人实时在线编辑文档、表格、演示文稿</p>
+                </div>
+            </div>
+        </div>
+        <!-- 三个倾倒的过渡图-->
+        <div class="bottom2">
+            <div class="row">
+
+                <div class="bottom2-wps1 col-4">
+                    <img class="p1" src="../img/instru.png" alt="">
+
+                    <div class="w1">开始你的<br>PPT制作</div>
+                </div>
+                <div class="bottom2-wps2 col-4">
+                    <img class="p2" src="../img/doc.png" alt="">
+
+                    <div class="w2">开始你的<br>WORD制作</div>
+                </div>
+                <div class="bottom2-wps3 col-4">
+                    <img class="p3" src="../img/excel.png" alt="">
+
+                    <div class="w3">开始你的<br>EXCEL制作</div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom3 text-center">
+            <div class="row mx-0">
+                <div class="col p-0">
+                    <a href=""><img src="../img/yifangyun_logo.png" alt=""></a>
+                </div>
+                <div class="col p-0">
+                    <a href=""> <img src="../img/wps_logo.png" alt=""></a>
+                </div>
+                <div class="col p-0">
+                    <a href=""><img src="../img/alltime_logo.png" alt=""></a>
+                </div>
+                <div class="col p-0">
+                    <a href=""> <img src="../img/mingdao_logo.png" alt=""></a>
+                </div>
+                <div class="col p-0">
+                    <a href=""> <img src="../img/1jijin_logo.png" alt=""></a>
+                </div>
+            </div>
+            <div class="row mx-0">
+                <div class="col p-0">
+                    <a href=""> <img src="../img/dingding_logo.png" alt=""></a>
+                </div>
+                <div class="col p-0">
+                    <a href=""> <img src="../img/TEDx_logo.png" alt=""></a>
+                </div>
+                <div class="col p-0">
+                    <a href=""> <img src="../img/teambetion_logo.png" alt=""></a>
+                </div>
+                <div class="col p-0">
+                    <a href=""> <img src="../img/yitai_logo.png" alt=""></a>
+                </div>
+                <div class="col p-0">
+                    <a href=""> <img src="../img/uber_logo.png" alt=""></a>
+                </div>
+            </div>
+            <a href="#" class="btn btn-primary">更多合作伙伴</a>
+        </div>
+        <!--最下面的字-->
+        <div class="bottom4 row">
+            <div class="col-3">
+                <ul class="left1 list-unstyled">
+                    <li><a href="">产品</a></li>
+                    <li><a href="">产品介绍</a></li>
+                    <li><a href="">企业版</a></li>
+                    <li><a href="">下载</a></li>
+                    <li><a href="">最近更新</a></li>
+                    <li><a href="">隐私条款</a></li>
+                </ul>
+            </div>
+            <div class="col-3">
+                <ul class="left2 list-unstyled">
+                    <li><a href="">公司</a></li>
+                    <li><a href="">关于我们</a></li>
+                    <li><a href="">加入我们</a></li>
+                    <li><a href="">合作伙伴</a></li>
+                    <li><a href="">媒体报道</a></li>
+
+                </ul>
+            </div>
+            <div class="col-3">
+                <ul class="right2 list-unstyled">
+                    <li><a href="">开放平台</a></li>
+                    <li><a href="">API文档</a></li>
+                    <li><a href="">查看申请流程</a></li>
+
+                </ul>
+            </div>
+            <div class="col-3">
+                <ul class="right1 list-unstyled">
+                    <li><a href="">联系我们</a></li>
+                    <li><a href="">电话：+86 13718023114</a></li>
+                    <li><a href="">联系：contact@yiqixie.com</a></li>
+                    <li><a href="">合作：marketing@yiqixie.com</a></li>
+                    <li><a href="">帮助：support@yiqixie.com</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

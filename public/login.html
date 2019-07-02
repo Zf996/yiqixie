@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #content{
+      
+      /* position:relative;
+      top:0px;
+      left:0px; */
+    }
+    .login{
+        position:relative;
+        top:0px;
+        left:495px;
+        text-align:center;
+        width:380px;
+        height:600px;
+        /* border:1px solid #000; */
+    }
+     #iphone{
+         position:position;
+         top:0px;
+         left:0px;
+         width:380px;
+         
+         }
+    #yiqixie{
+        position:absolute;
+        top:140px;
+        left:80px;
+        width:200px;
+    }
+    .login2{
+        position:absolute;
+
+        top:290px;
+        left:35px;
+        width:330px;
+        height:330px;
+    }
+    .login2 .name{
+            margin:20px;
+            padding:5px 0;
+            outline:none;
+            border:2px solid #0ff;
+            border-radius:10px;
+    }
+
+    .login2 .name:focus{
+            
+    }
+    .login2 .upwd{
+        margin:20px;
+        padding:5px 0;
+        outline:none;
+        border:2px solid #0ff;
+            border-radius:10px;
+    }
+    .login2 .upwd:focus{
+           
+    }
+    .text{
+        display:none; 
+        position:absolute;
+        top:160px;
+        left:5px;
+        width:300px;
+        height:100px;
+        border-radius:10px;
+        font-size:30px;
+        color:#fff;
+        background-color:#0ff;
+        transition:all 2s;
+    }
+    .login2:hover .text{
+
+        display:block; 
+    }
+    </style>
+</head>
+<body>
+ <div id="content">
+    <div class="login">
+      <img id="iphone" src="../img/iphone_7.png" alt="">
+      <img id="yiqixie" src="../img/name.png" alt="">
+      <!-- <img src="../img/header_logo_black.png" alt=""> -->
+      
+      <div class="login2">
+        <form action="">
+                <label for="name">账号:</label> <input class="name" type="text"><br>
+                <label for="upwd">密码:</label> <input class="upwd" type="password">
+            
+        </form>
+        <div class="text">
+        <p>欢迎加入一起写</p>
+
+         </div>
+      </div>
+    </div>
+ </div>
+   
+</body>
+</html>
